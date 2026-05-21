@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Artisans Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <h1 class="logo">CraftLocal</h1>
+            <div class="nav-controls">
+                <input type="text" id="search-input" placeholder="ค้นหาสินค้าหัตถกรรม...">
+                <button id="cart-btn" onclick="toggleCart(true)">
+                    🛒 ตะกร้าสินค้า <span id="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h2>สนับสนุนผลงานและภูมิปัญญาท้องถิ่น</h2>
+        <p>แหล่งรวมสินค้าแฮนด์เมดทรงคุณค่าจากช่างฝีมือทั่วประเทศ</p>
+    </header>
+
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterCategory('All', this)">ทั้งหมด</button>
+        <button class="filter-btn" onclick="filterCategory('Bag', this)">กระเป๋า</button>
+        <button class="filter-btn" onclick="filterCategory('Textile', this)">ผ้าทอ</button>
+        <button class="filter-btn" onclick="filterCategory('Pottery', this)">เครื่องปั้น</button>
+        <button class="filter-btn" onclick="filterCategory('Home', this)">ของตกแต่งบ้าน</button>
+    </div>
+
+    <main class="container">
+        <div id="product-grid" class="grid"></div>
+    </main>
+
+    <div id="cart-drawer" class="drawer">
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <h3>รายการสินค้าในตะกร้า</h3>
+                <button class="close-btn" onclick="toggleCart(false)">&times;</button>
+            </div>
+            <div id="cart-items-list">
+                </div>
+            <div class="drawer-footer">
+                <h4>ราคาสุทธิ: <span id="cart-total">0</span> บาท</h4>
+                <button id="checkout-btn" onclick="checkout()">สั่งซื้อและตัดสต็อก</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
